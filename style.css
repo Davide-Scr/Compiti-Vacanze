@@ -1,0 +1,239 @@
+/* Theme variables */
+:root{
+  --bg: #f7f8fb;
+  --surface: #ffffff;
+  --muted: #6b6f76;
+  --accent: #3b23d8;
+  --accent-2: #1f1cb9;
+  --text: #222;
+  --card-shadow: 0 6px 20px rgba(33,32,49,0.06);
+  --radius: 12px;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  font-family: "Lexend", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+  background: linear-gradient(180deg, var(--bg), #ffffff 60%);
+  color: var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  font-size: 16px;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: space-between;
+  background: linear-gradient(90deg,var(--accent), var(--accent-2));
+  color: white;
+  padding: 0.85rem 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 80;
+  box-shadow: 0 6px 18px rgba(31,28,185,0.12);
+  backdrop-filter: blur(6px);
+}
+
+.navbar .brand {
+  display:flex;
+  align-items:center;
+  gap:0.6rem;
+}
+.navbar .logo {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:38px;
+  height:38px;
+  background:rgba(255,255,255,0.12);
+  border-radius:8px;
+  font-weight:700;
+}
+.navbar h1 {
+  font-size:1.05rem;
+  font-family: "Lexend", sans-serif;
+  font-weight:700;
+  letter-spacing:0.2px;
+}
+
+/* Nav links */
+.nav-links {
+  display:flex;
+  align-items:center;
+}
+.nav-links ul {
+  list-style:none;
+  display:flex;
+  gap:1rem;
+}
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 0.6rem;
+  border-radius: 8px;
+  font-weight:600;
+  transition: background 180ms, transform 180ms;
+}
+.nav-links a:hover, .nav-links a:focus {
+  background: rgba(255,255,255,0.08);
+  transform: translateY(-2px);
+  outline: none;
+}
+
+/* Mobile toggle */
+.nav-toggle {
+  display:none;
+  background:transparent;
+  border:0;
+  padding:6px;
+  cursor:pointer;
+}
+.nav-toggle .bar {
+  display:block;
+  width:22px;
+  height:2px;
+  margin:4px 0;
+  background:white;
+  border-radius:2px;
+}
+
+/* Sections */
+.section {
+  padding: 3rem 1.25rem;
+  max-width: 1100px;
+  margin: auto;
+}
+.section h2 {
+  margin-bottom: 1rem;
+  color: var(--accent-2);
+  font-size: 1.8rem;
+  border-bottom: 3px solid rgba(59,35,216,0.08);
+  padding-bottom: 0.35rem;
+  font-family: "Lexend", sans-serif;
+}
+
+/* Indice */
+.indice {
+  background: linear-gradient(0deg, rgba(255,255,255,0.6), rgba(255,255,255,0.8));
+  padding: 1.25rem;
+  border-left: 6px solid var(--accent-2);
+  margin: 1.5rem auto;
+  border-radius: 10px;
+  box-shadow: var(--card-shadow);
+}
+
+/* Immagini */
+.image-container {
+  text-align: center;
+  margin: 2rem 0;
+}
+.image-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(25,25,60,0.06);
+  border: 1px solid rgba(0,0,0,0.04);
+}
+
+/* Principi - responsive grid */
+.principi-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px,1fr));
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+.principio {
+  background: var(--surface);
+  padding: 1rem;
+  border-radius: var(--radius);
+  box-shadow: var(--card-shadow);
+  transition: transform 0.25s, box-shadow 0.25s;
+  text-align: center;
+}
+.principio:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 36px rgba(35,32,80,0.08);
+}
+.principio h3 {
+  color: var(--accent);
+  margin-bottom: 0.45rem;
+  font-size:1.05rem;
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0.75rem;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 8px 28px rgba(30,30,60,0.04);
+}
+th, td {
+  padding: 0.9rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+th {
+  background: linear-gradient(90deg,var(--accent),var(--accent-2));
+  color: white;
+  font-weight:700;
+}
+tbody tr:hover td {
+  background: rgba(31,28,185,0.03);
+}
+
+/* Lista aziende */
+.aziende-lista {
+  margin-top: 1rem;
+  list-style: disc;
+  padding-left: 1.5rem;
+}
+.aziende-lista li {
+  margin: 0.5rem 0;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  background: #0f1723;
+  color: #cbd5e1;
+  padding: 1.25rem;
+  margin-top: 2rem;
+  font-size: 0.95rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 820px) {
+  .nav-links { display:none; }
+  .nav-toggle { display:block; }
+
+  .nav-links.open { 
+    position: absolute;
+    top:64px;
+    right:12px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,255,255,0.95));
+    box-shadow: 0 10px 30px rgba(10,10,30,0.08);
+    border-radius: 10px;
+    padding: 0.75rem 0.9rem;
+    display:block;
+    min-width: 180px;
+  }
+  .nav-links.open ul {
+    display:flex;
+    flex-direction:column;
+    gap:0.25rem;
+  }
+  .nav-links.open a { color: var(--text); padding: 0.6rem 0.8rem; background:transparent; border-radius:6px; }
+}
